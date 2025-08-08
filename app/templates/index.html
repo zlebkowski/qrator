@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Self-Hosted QR Generator</h1>
+        <form action="/generate" method="post">
+            <label for="qr_type">QR Type:</label>
+            <select id="qr_type" name="qr_type" required>
+                <option value="text">Text/URL</option>
+                <option value="epc">EPC (Payment)</option>
+                <option value="email">Email</option>
+                <option value="sms">SMS</option>
+                <option value="wifi">Wi-Fi</option>
+            </select>
+
+            <div id="dynamic-fields">
+                <!-- Fields will be added here by JavaScript -->
+            </div>
+
+            <button type="submit">Generate QR Code</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <img id="qr-image" src="" alt="Generated QR Code">
+            <a id="download-link" href="#" download="qrcode.png">Download QR Code</a>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

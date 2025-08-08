@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  qr-generator:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - qr-network
+
+networks:
+  qr-network:
+    driver: bridge

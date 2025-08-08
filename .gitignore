@@ -1,0 +1,4 @@
+.DS_Store # macOS junk file
+.Trash/ # Prevents the error you saw earlier
+.DS_Store
+.Trash/
